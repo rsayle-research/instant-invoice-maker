@@ -2,48 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Instant Invoice Maker — Free Online PDF Generator</title>
-<meta name="description" content="Create professional invoices instantly. Free, no signup required.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant Invoice Maker | Free PDF Invoice Generator for Freelancers</title>
+  <meta name="description" content="Generate professional invoices instantly — free, no signup required. Built for freelancers and small businesses.">
+  <link rel="icon" href="https://img.icons8.com/color/48/000000/invoice.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-<body class="bg-gray-100 flex justify-center min-h-screen">
-  <div class="bg-white shadow-xl rounded-2xl p-8 mt-10 w-full max-w-lg">
-    <h1 class="text-2xl font-bold mb-4 text-center text-gray-800">Instant Invoice Maker</h1>
 
-    <form id="invoiceForm" class="space-y-4">
-      <div>
-        <label class="block font-semibold mb-1">Your Name / Business</label>
-        <input id="fromName" type="text" class="w-full border p-2 rounded" placeholder="John Doe Freelance Design">
-      </div>
+<body class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 flex flex-col">
 
-      <div>
-        <label class="block font-semibold mb-1">Client Name</label>
-        <input id="clientName" type="text" class="w-full border p-2 rounded" placeholder="Acme Corp.">
-      </div>
+  <!-- HEADER -->
+  <header class="bg-blue-600 text-white py-4 shadow-md">
+    <div class="max-w-4xl mx-auto flex justify-between items-center px-4">
+      <h1 class="text-xl font-bold tracking-wide">Instant Invoice Maker</h1>
+      <a href="#upgrade" class="bg-white text-blue-600 font-semibold px-3 py-1 rounded hover:bg-gray-100">
+        Go Pro →
+      </a>
+    </div>
+  </header>
 
-      <div>
-        <label class="block font-semibold mb-1">Service Description</label>
-        <textarea id="description" class="w-full border p-2 rounded" rows="3" placeholder="Logo design, 3 concepts..."></textarea>
-      </div>
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow flex justify-center items-start mt-8 px-4">
+    <div class="transition transform hover:-translate-y-1 hover:scale-105 duration-300 bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg">
 
-      <div>
-        <label class="block font-semibold mb-1">Amount ($)</label>
-        <input id="amount" type="number" class="w-full border p-2 rounded" placeholder="300">
-      </div>
+      <img src="https://img.icons8.com/fluency/96/invoice.png" alt="Invoice Icon" class="mx-auto mb-4 w-16 h-16">
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-2">Instant Invoice Maker</h2>
+      <p class="text-center text-gray-500 mb-6">Create professional invoices instantly — no signup, no hassle.</p>
 
-      <div class="text-center">
-        <button type="button" id="generateBtn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-          Generate Invoice PDF
+      <form id="invoiceForm" class="space-y-5 mt-4">
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Your Business / Name</label>
+          <input id="fromName" type="text" class="w-full border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none p-2 rounded" placeholder="John Doe Freelance Design">
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Client Name</label>
+          <input id="clientName" type="text" class="w-full border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none p-2 rounded" placeholder="Acme Corp.">
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Service Description</label>
+          <textarea id="description" rows="3" class="w-full border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none p-2 rounded" placeholder="Logo design, 3 concepts..."></textarea>
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Amount ($)</label>
+          <input id="amount" type="number" class="w-full border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none p-2 rounded" placeholder="300">
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Upload Logo (Pro)</label>
+          <input id="logoUpload" type="file" accept="image/*" class="w-full border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none p-2 rounded">
+        </div>
+
+        <div class="text-center mt-6">
+          <button type="button" id="generateBtn"
+            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg shadow hover:shadow-lg hover:bg-blue-700 transition-all">
+            💾 Generate Invoice PDF
+          </button>
+        </div>
+      </form>
+
+      <!-- Feature list -->
+      <section class="mt-8 text-gray-600 text-sm">
+        <ul class="list-disc list-inside space-y-1">
+          <li>No signup required — 100% free to use</li>
+          <li>Clean, professional PDF layout</li>
+          <li>Perfect for freelancers and small businesses</li>
+        </ul>
+      </section>
+
+      <!-- Upgrade section -->
+      <section id="upgrade" class="mt-8 bg-blue-50 border border-blue-200 p-4 rounded-lg text-center">
+        <h2 class="text-lg font-bold text-blue-700 mb-2">Want to add your logo & brand colors?</h2>
+        <p class="text-gray-700 mb-3">Upgrade for just $5 — lifetime access.</p>
+        <a href="https://www.buymeacoffee.com/YOURNAME" target="_blank"
+          class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-5 py-2 rounded-lg inline-block">
+          ☕ Upgrade to Pro
+        </a>
+      </section>
+
+      <!-- Share button -->
+      <div class="text-center mt-6">
+        <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');"
+          class="text-sm text-gray-500 underline hover:text-gray-700">
+          Share this tool
         </button>
       </div>
-    </form>
 
-    <p class="text-center text-gray-500 text-sm mt-6">
-      Free basic version. <a href="#" class="underline">Upgrade for $5</a> for logo & color themes.
-    </p>
-  </div>
+    </div>
+  </main>
 
-  <script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer class="text-center text-gray-500 text-sm mt-10 mb-4">
+    <p>© 2025 Instant Invoice Maker. Crafted with ❤️ by <a href="https://github.com/YOURUSERNAME" target="_blank" class="underline">Your Name</a>.</p>
+  </footer>
+
+  <script>
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      const fromName = document.getElementById("fromName").value || "Your Name";
+      const clientName = document.getElementById("clientName").value || "Client";
+      const description = document.getElementById("description").value || "Service description";
+      const amount = document.getElementById("amount").value || "0.00";
+      const logoFile = document.getElementById("logoUpload").files[0];
+      const date = new Date().toLocaleDateString();
+
+      doc.setFontSize(20);
+      doc.text("INVOICE", 20, 20);
+
+      doc.setFontSize(12);
+      doc.text(`Date: ${date}`, 150, 20);
+      doc.text(`From: ${fromName}`, 20, 40);
+      doc.text(`To: ${clientName}`, 20, 50);
+
+      doc.text("Description:", 20, 70);
+      doc.text(description, 20, 80, { maxWidth: 170 });
+      doc.text(`Amount Due: $${amount}`, 20, 110);
+
+      doc.setFontSize(10);
+      doc.text("Thank you for your business!", 20, 130);
+
+      // Handle logo upload (Pro)
+      if (logoFile) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const logo = e.target.result;
+          doc.addImage(logo, "PNG", 150, 30, 40, 20);
+          doc.save(`Invoice-${clientName.replace(/\s+/g, "_")}.pdf`);
+        };
+        reader.readAsDataURL(logoFile);
+      } else {
+        doc.save(`Invoice-${clientName.replace(/\s+/g, "_")}.pdf`);
+      }
+    });
+  </script>
 </body>
 </html>
